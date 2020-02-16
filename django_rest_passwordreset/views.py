@@ -191,9 +191,9 @@ class ResetPasswordRequestToken(APIView):
         # find a user by email address (case insensitive search)
 
         if get_use_username():
-            users = User.objects.filter(username__iexact=email)
+            users = User.objects.filter(username=email)
         else:
-            users = User.objects.filter(email__iexact=email)
+            users = User.objects.filter(email=email)
 
         active_user_found = False
 
